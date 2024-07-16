@@ -18,15 +18,21 @@ mail.addEventListener(
         console.log('UserMail', UserMail, typeof UserMail);
         console.log('UserMail.value', UserMail.value, typeof UserMail.value);
         console.log('ValidateEmail', ValidateEmail, typeof ValidateEmail);
-        ValidateEmail.preventDefault(); 
+        ValidateEmail.preventDefault();
         //2.5 SE è corretta eseguo----------------------------------------------------
-        if (UserMail==emails[0] || UserMail==emails[1] || UserMail==emails[3]){
+        if (UserMail.value == emails[0] || UserMail.value == emails[1] || UserMail.value == emails[3]) {
             console.log('email corretta')
+            let resultSpan = document.getElementById('result');
+            resultSpan.innerHTML += 'Bentornato!'
+        
         }
         //2.5 SE è sbagliata invece eseguo----------------------------------------------------
-        else{
+        else {
             console.log('Email sbagliata')
-            alert('Email sbagliata')
+            let resultSpan = document.getElementById('result');
+            resultSpan.innerHTML += 'Mi dispiace ma i dati da te inseriti non corrispondono'
         }
+
     }
+
 )
